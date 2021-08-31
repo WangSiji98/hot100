@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode34 {
     public int[] searchRange(int[] nums, int target) {

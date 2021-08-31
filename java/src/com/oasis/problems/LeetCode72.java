@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode72 {
     public int minDistance(String word1, String word2) {

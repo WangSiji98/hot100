@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode75 {
     public void sortColors(int[] nums) {

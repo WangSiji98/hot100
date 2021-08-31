@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 import java.util.ArrayList;
 import java.util.Collections;

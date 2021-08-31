@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode55 {
     public boolean canJump(int[] nums) {

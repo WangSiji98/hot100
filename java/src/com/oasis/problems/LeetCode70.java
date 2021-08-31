@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode70 {
     public int climbStairs(int n) {

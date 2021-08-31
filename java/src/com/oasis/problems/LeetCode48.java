@@ -1,4 +1,4 @@
-package com.oasis;
+package com.oasis.problems;
 
 public class LeetCode48 {
     public void rotate(int[][] matrix) {
