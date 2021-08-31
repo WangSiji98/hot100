@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//public class Test {
-//    public static void main(String[] args) {
-//        int[] nums = new int[]{1, 3, 4, 2};
-////        int[][] nums2 = new int[][]{{1, 2}, {3, 4}};
-////        Arrays.sort(nums2, (a, b) -> a[0] - b[0]);
-//        Arrays.sort();
-//        for (int n: nums) {
-//            System.out.print(n);
-//        }
-//    }
-//}
+public class Test1 {
+    public static void main(String[] args) {
+        int[] s = new int[]{1, 2, 3, 4, 5};
+        int[] t = Arrays.copyOfRange(s, 1, 3);
+        for (int n: t) {
+            System.out.println(n);
+        }
+    }
+}
 
 //class Test {
 //    public int[][] merge(int[][] intervals) {
