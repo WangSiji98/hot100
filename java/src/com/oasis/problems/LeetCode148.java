@@ -6,23 +6,6 @@ import java.util.Objects;
 public class LeetCode148 {
     public ListNode sortList(ListNode head) {
         return sort(head, null);
-//        if (Objects.isNull(head) || Objects.isNull(head.next)) {
-//            return head;
-//        }
-//        ListNode fast = head, slow = head;
-//        while (Objects.nonNull(fast)) {
-//            fast = fast.next;
-//            slow = slow.next;
-//            if (Objects.nonNull(fast)) {
-//                fast = fast.next;
-//            }
-//        }
-//        ListNode p1 = head, p2 = slow.next;
-//        slow.next = null;
-//        p1 = sortList(p1);
-//        p2 = sortList(p2);
-//        ListNode p = merge(p1, p2);
-//        return p;
     }
 
     private ListNode sort(ListNode head, ListNode tail) {
@@ -34,22 +17,23 @@ public class LeetCode148 {
             return head;
         }
         ListNode fast = head, slow = head;
-        while (Objects.nonNull(fast)) {
+        while (fast != tail) {
             fast = fast.next;
             slow = slow.next;
-            if (Objects.nonNull(fast)) {
+            if (fast != tail) {
                 fast = fast.next;
             }
         }
-        ListNode p1 = sort(head, slow);
-        ListNode p2 = sort(slow, fast);
+        ListNode mid = slow;
+        ListNode p1 = sort(head, mid);
+        ListNode p2 = sort(mid, tail);
         ListNode p = merge(p1, p2);
         return p;
     }
 
     private ListNode merge(ListNode head1, ListNode head2) {
         ListNode dummy = new ListNode();
-        ListNode p1 = head1, p2 = head2, p = dummy, rest = null;
+        ListNode p1 = head1, p2 = head2, p = dummy;
         while (Objects.nonNull(p1) && Objects.nonNull(p2)) {
             if (p1.val <= p2.val) {
                 p.next = p1;
@@ -60,17 +44,11 @@ public class LeetCode148 {
             }
             p = p.next;
         }
-        if (Objects.nonNull(p1)) {
-            rest = p1;
-        } else {
-            rest = p2;
+        if (p1 != null) {
+            p.next = p1;
+        } else if (p2 != null) {
+            p.next = p2;
         }
-        while (Objects.nonNull(rest)) {
-            p.next = rest;
-            rest = rest.next;
-            p = p.next;
-        }
-        p.next = null;
         return dummy.next;
     }
 
